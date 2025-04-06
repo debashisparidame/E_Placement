@@ -6,7 +6,7 @@ import { BASE_URL } from '../../config/backend_url';
 import AccordionPlaceholder from '../AccordionPlaceholder';
 
 function StudentYearAndBranchView() {
-  document.title = 'CPMS | All Students';
+  document.title = 'CareerConnect | All Students';
 
   const [loading, setLoading] = useState(true);
 
@@ -83,17 +83,17 @@ function StudentYearAndBranchView() {
     <>
       {
         loading ? (
-          // <div className="flex justify-center h-72 items-center">
-          //   <i className="fa-solid fa-spinner fa-spin text-3xl" />
+          // <div className="flex items-center justify-center h-72">
+          //   <i className="text-3xl fa-solid fa-spinner fa-spin" />
           // </div>
           <AccordionPlaceholder />
         ) : (
           <>
-            <div className="my-4 p-6">
+            <div className="p-6 my-4">
               <div className="">
                 {/* parent accordion for year of student  */}
                 <Accordion defaultActiveKey={['1']} flush className='flex flex-col gap-4'>
-                  <Accordion.Item eventKey="1" className='backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400'>
+                  <Accordion.Item eventKey="1" className='border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400'>
                     {/* 4th year  */}
                     <Accordion.Header>Fourth Year</Accordion.Header>
                     <Accordion.Body>
@@ -107,7 +107,7 @@ function StudentYearAndBranchView() {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="2" className='backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400'>
+                  <Accordion.Item eventKey="2" className='border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400'>
                     {/* 3rd year  */}
                     <Accordion.Header>Third Year</Accordion.Header>
                     <Accordion.Body>
@@ -121,7 +121,7 @@ function StudentYearAndBranchView() {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="3" className='backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400'>
+                  <Accordion.Item eventKey="3" className='border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400'>
                     {/* 2nd year  */}
                     <Accordion.Header>Second Year</Accordion.Header>
                     <Accordion.Body>
@@ -135,7 +135,7 @@ function StudentYearAndBranchView() {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  <Accordion.Item eventKey="4" className='backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400'>
+                  <Accordion.Item eventKey="4" className='border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400'>
                     {/* 1st year  */}
                     <Accordion.Header>First Year</Accordion.Header>
                     <Accordion.Body>

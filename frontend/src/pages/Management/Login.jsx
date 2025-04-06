@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 import { BASE_URL } from '../../config/backend_url';
 
 function LoginManagement() {
-  document.title = 'CPMS | Management Login';
+  document.title = 'CareerConnect | Management Login';
 
   const navigate = useNavigate();
   const [isLoading, setLoading] = useState(false);
@@ -83,32 +83,32 @@ function LoginManagement() {
 
       <div className="flex justify-center items-center h-screen bg-gradient-to-r from-cyan-500 from-10% via-purple-400 via-40% to-pink-500 to-100%">
         <form className="form-signin flex justify-center items-center flex-col gap-3 backdrop-blur-md bg-white/30 border border-white/20 rounded-lg p-8 shadow shadow-red-400 w-1/3 max-lg:w-2/3 max-md:w-3/4 max-[400px]:w-4/5" onSubmit={handleSubmit}>
-          <div className='flex justify-center items-center flex-col'>
-            <img className="mb-4 rounded-xl shadow w-30 h-28 lg:w-40 lg:h-40" src={`${Logo}`} alt="Logo Image" />
-            <h1 className="h3 mb-3 font-weight-normal">Management Log In</h1>
+          <div className='flex flex-col items-center justify-center'>
+            <img className="mb-4 rounded-xl w-30 h-28 lg:w-30 lg:h-40" src={`${Logo}`} alt="Logo Image" />
+            <h1 className="mb-3 h3 font-weight-normal">Management Log In</h1>
           </div>
           <div className="w-full">
             <label htmlFor="inputEmail" className="sr-only">Email address</label>
-            <input type="email" id="inputEmail" className="form-control ml-1" placeholder="Email address" autoFocus="" fdprocessedid="gwlj3s" autoComplete='email' name='email' value={email} onChange={handleChange} />
+            <input type="email" id="inputEmail" className="ml-1 form-control" placeholder="Email address" autoFocus="" fdprocessedid="gwlj3s" autoComplete='email' name='email' value={email} onChange={handleChange} />
             {/* error for email  */}
-            {<div className='text-red-500 ml-2 text-left'>
+            {<div className='ml-2 text-left text-red-500'>
               {error?.email}
             </div>}
           </div>
 
           <div className="w-full">
-            <div className="flex justify-center items-center w-full">
+            <div className="flex items-center justify-center w-full">
               <label htmlFor="inputPassword" className="sr-only">Password</label>
               <input type={`${isEyeOpen ? "text" : "password"}`} id="inputPassword" className="form-control" placeholder="Password" fdprocessedid="9sysne" autoComplete='current-password' name='password' value={password} onChange={handleChange} />
               <i className={`${isEyeOpen ? "fa-solid fa-eye" : "fa-regular fa-eye-slash"} -ml-6 cursor-pointer`} onClick={handleEye}></i>
             </div>
             {/* error for password  */}
-            {<div className='text-red-500 ml-2 text-left'>
+            {<div className='ml-2 text-left text-red-500'>
               {error?.password}
             </div>}
           </div>
 
-          <div className="flex justify-center items-center flex-col">
+          <div className="flex flex-col items-center justify-center">
             <Button
               type="submit"
               variant="primary"
@@ -118,11 +118,11 @@ function LoginManagement() {
             </Button>
           </div>
           <span className='text-center'>Log In as TPO?
-            <span className='text-blue-500 font-bold cursor-pointer px-1' onClick={() => navigate('../tpo/login')}>
+            <span className='px-1 font-bold text-blue-500 cursor-pointer' onClick={() => navigate('../tpo/login')}>
               Click Here
             </span>
           </span>
-          <p className="text-muted text-center text-gray-400">© College Placement Management System 2024 - 25</p>
+          <p className="text-center text-gray-400 text-muted"><span className="font-semibold text-green-600">© CareerConnect 2025</span></p>
         </form>
       </div>
     </>

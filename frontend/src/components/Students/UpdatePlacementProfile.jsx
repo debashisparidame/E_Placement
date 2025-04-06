@@ -11,7 +11,7 @@ import { BASE_URL } from '../../config/backend_url';
 
 
 function UpdatePlacementProfile() {
-  document.title = 'CPMS | Placement Profile';
+  document.title = 'CareerConnect | Placement Profile';
 
   // userData to store user data get from userId
   const [userData, setUserData] = useState(null);
@@ -137,8 +137,8 @@ function UpdatePlacementProfile() {
     <>
       {
         loading ? (
-          <div className="flex justify-center h-72 items-center">
-            <i className="fa-solid fa-spinner fa-spin text-3xl" />
+          <div className="flex items-center justify-center h-72">
+            <i className="text-3xl fa-solid fa-spinner fa-spin" />
           </div>
         ) : (
           <>
@@ -156,14 +156,14 @@ function UpdatePlacementProfile() {
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-4 my-4 text-base max-sm:text-sm">
                   {/* basic info  */}
-                  <div className="grid backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6 max-md:col-span-2">
+                  <div className="grid p-6 border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400 max-md:col-span-2">
                     <span className='text-2xl max-sm:text-xl'>Basic Details</span>
                     <div className="flex flex-col justify-between py-2">
                       {/* Basic Info */}
                       <div className="flex justify-between">
                         <div className="space-y-4">
                           <div>
-                            <span className="text-gray-700 font-bold">Full Name: </span>
+                            <span className="font-bold text-gray-700">Full Name: </span>
                             <span className="text-gray-800">
                               {userData?.first_name + " "}
                               {userData?.middle_name && userData?.middle_name + " "}
@@ -172,14 +172,14 @@ function UpdatePlacementProfile() {
                           </div>
 
                           <div>
-                            <span className="text-gray-700 font-bold">Email: </span>
+                            <span className="font-bold text-gray-700">Email: </span>
                             <span className="text-gray-800">
                               {userData?.email}
                             </span>
                           </div>
 
                           <div>
-                            <span className="text-gray-700 font-bold">Number: </span>
+                            <span className="font-bold text-gray-700">Number: </span>
                             <span className="text-gray-800">
                               {userData?.number}
                             </span>
@@ -187,7 +187,7 @@ function UpdatePlacementProfile() {
 
                           {userData?.studentProfile?.uin && (
                             <div>
-                              <span className="text-gray-700 font-bold">UIN: </span>
+                              <span className="font-bold text-gray-700">UIN: </span>
                               <span className="text-gray-800">
                                 {userData?.studentProfile?.uin}
                               </span>
@@ -196,7 +196,7 @@ function UpdatePlacementProfile() {
                         </div>
 
                         {/* Profile Picture */}
-                        <Col xs={5} md={4} className="flex justify-end items-start rounded">
+                        <Col xs={5} md={4} className="flex items-start justify-end rounded">
                           <Image src={userData?.profile} thumbnail />
                         </Col>
                       </div>
@@ -204,14 +204,14 @@ function UpdatePlacementProfile() {
                         {/* resume upload  */}
                         <UploadResume fetchCurrentUserData={fetchCurrentUserData} /> {/* passing function to update userData */}
                         {(userData?.studentProfile?.resume !== "undefined") && (
-                          <div className="py-2 px-2">
-                            <span className='bg-blue-500 py-1 pr-2 rounded cursor-pointer hover:bg-blue-700'>
-                              <a href={userData?.studentProfile?.resume} target='_blanck' className='no-underline text-white'>
-                                <i className="fa-regular fa-eye px-2" />
+                          <div className="px-2 py-2">
+                            <span className='py-1 pr-2 bg-blue-500 rounded cursor-pointer hover:bg-blue-700'>
+                              <a href={userData?.studentProfile?.resume} target='_blanck' className='text-white no-underline'>
+                                <i className="px-2 fa-regular fa-eye" />
                                 View Resume
                               </a>
                             </span>
-                            <p className='text-sm text-gray-500 mt-1'>{userData?.studentProfile?.resume?.filename}</p>
+                            <p className='mt-1 text-sm text-gray-500'>{userData?.studentProfile?.resume?.filename}</p>
                           </div>
                         )}
                       </div>
@@ -219,12 +219,12 @@ function UpdatePlacementProfile() {
                   </div>
 
                   {/* college info  */}
-                  <div className="backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6 max-md:col-span-2">
+                  <div className="p-6 border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400 max-md:col-span-2">
                     <span className='text-2xl max-sm:text-xl'>College Information</span>
                     <div className="grid grid-cols-2">
                       {/* semester sgpa  */}
                       <div className="grid grid-cols-2 gap-2">
-                        <div className=" py-3 flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 py-3 ">
                           <FloatingLabel controlId="floatingSem1" label="Sem 1">
                             <Form.Control
                               type="number"
@@ -266,7 +266,7 @@ function UpdatePlacementProfile() {
                             />
                           </FloatingLabel>
                         </div>
-                        <div className=" py-3 flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2 py-3 ">
                           <FloatingLabel controlId="floatingSem5" label="Sem 5">
                             <Form.Control
                               type="number"
@@ -311,7 +311,7 @@ function UpdatePlacementProfile() {
                       </div>
 
                       {/* current year, live kt and any gap  */}
-                      <div className="px-2 py-3 flex flex-col gap-3">
+                      <div className="flex flex-col gap-3 px-2 py-3">
                         <FloatingLabel controlId="floatingSelectYear" label="Current Year">
                           <Form.Select
                             aria-label="Floating label select year"
@@ -370,7 +370,7 @@ function UpdatePlacementProfile() {
                         />
                         {
                           cgpa !== "NaN" &&
-                          <div className='mt-4 text-2xl text-green-500 font-bold'>
+                          <div className='mt-4 text-2xl font-bold text-green-500'>
                             <span className=''>CGPA: </span>
                             <span className=''>
                               {cgpa}
@@ -382,11 +382,11 @@ function UpdatePlacementProfile() {
                   </div>
 
                   {/* past qualification  */}
-                  <div className="col-span-2 backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6">
+                  <div className="col-span-2 p-6 border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
                     <span className='text-2xl max-sm:text-xl'>Past Qualification</span>
                     <div className="grid grid-cols-3 max-sm:grid-cols-1">
-                      <div className="px-2 py-3 flex flex-col gap-2">
-                        <FloatingLabel controlId="floatingSelectSSC" label="SSC Board Name">
+                      <div className="flex flex-col gap-2 px-2 py-3">
+                        <FloatingLabel controlId="floatingSelectSSC" label="Graduation University Name">
                           <Form.Select
                             aria-label="Floating label select SSCBoard"
                             className='cursor-pointer'
@@ -408,17 +408,17 @@ function UpdatePlacementProfile() {
                               });
                             }}
                           >
-                            <option disabled value="undefined" className='text-gray-400'>Enter Your SSC Board Name</option>
-                            <option value="Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE)">Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE)</option>
-                            <option value="Central Board of Secondary Education (CBSE)">Central Board of Secondary Education (CBSE)</option>
-                            <option value="Council for the Indian School Certificate Examinations (CISCE)">Council for the Indian School Certificate Examinations (CISCE)</option>
+                            <option disabled value="undefined" className='text-gray-400'>Enter Your Graduation University Name</option>
+                            <option value="Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE)">Utkal University</option>
+                            <option value="Central Board of Secondary Education (CBSE)">Ravenshaw University</option>
+                            <option value="Council for the Indian School Certificate Examinations (CISCE)">KIIT University</option>
                             <option value="Other">Other</option>
                           </Form.Select>
                         </FloatingLabel>
-                        <FloatingLabel controlId="floatingSSCMarks" label="SSC Percentage">
+                        <FloatingLabel controlId="floatingSSCMarks" label="Graduation CGPA">
                           <Form.Control
                             type="number"
-                            placeholder="SSC Percentage"
+                            placeholder="Graduation CGPA"
                             name='sscPercentage'
                             value={userData?.studentProfile?.pastQualification?.ssc?.percentage}
                             onChange={(e) => {
@@ -438,10 +438,10 @@ function UpdatePlacementProfile() {
                             }}
                           />
                         </FloatingLabel>
-                        <FloatingLabel controlId="floatingSelectSSCPassingYear" label="SSC Passing Year">
+                        <FloatingLabel controlId="floatingSelectSSCPassingYear" label="Graduation Passing Year">
                           <Form.Control
                             type="number"
-                            placeholder="SSC Passing Year"
+                            placeholder="Graduation Passing Year"
                             name='sscPassingYear'
                             value={userData?.studentProfile?.pastQualification?.ssc?.year}
                             onChange={(e) => {
@@ -463,7 +463,7 @@ function UpdatePlacementProfile() {
                         </FloatingLabel>
                       </div>
 
-                      <div className="px-2 py-3 flex flex-col gap-2">
+                      <div className="flex flex-col gap-2 px-2 py-3">
                         <FloatingLabel controlId="floatingSelectHSC" label="HSC Board Name">
                           <Form.Select
                             aria-label="Floating label select HSC Board"
@@ -486,11 +486,11 @@ function UpdatePlacementProfile() {
                               });
                             }}
                           >
-                            <option disabled value="undefined" className='text-gray-400'>Enter Your SSC Board Name</option>
-                            <option value="Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE)">Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE)</option>
+                            <option disabled value="undefined" className='text-gray-400'>Enter Your HSC Board Name</option>
+                            <option value="Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE)">Council of Higher Secondary Education, Odisha (CHSE)</option>
                             <option value="Central Board of Secondary Education (CBSE)">Central Board of Secondary Education (CBSE)</option>
                             <option value="Council for the Indian School Certificate Examinations (CISCE)">Council for the Indian School Certificate Examinations (CISCE)</option>
-                            <option value="NoHSC">No HSC</option>
+                            {/* <option value="NoHSC">No HSC</option> */}
                             <option value="Other">Other</option>
                           </Form.Select>
                         </FloatingLabel>
@@ -542,8 +542,8 @@ function UpdatePlacementProfile() {
                         </FloatingLabel>
                       </div>
 
-                      <div className="px-2 py-3 flex flex-col gap-2">
-                        <FloatingLabel controlId="floatingSelectDiploma" label="Diploma Board Name">
+                      <div className="flex flex-col gap-2 px-2 py-3">
+                        <FloatingLabel controlId="floatingSelectDiploma" label="10th Board Name">
                           <Form.Select
                             aria-label="Floating label select Diploma Board"
                             className='cursor-pointer'
@@ -565,16 +565,16 @@ function UpdatePlacementProfile() {
                               });
                             }}
                           >
-                            <option disabled value="undefined" className='text-gray-400'>Enter Your Diploma University Name</option>
-                            <option value="Mumbai University">Mumbai University</option>
-                            <option value="NoDiploma">No Diploma</option>
+                            <option disabled value="undefined" className='text-gray-400'>Enter Your 10th Board Name</option>
+                            <option value="Mumbai University">Odisha Board of Secondary Education</option>
+                            <option value="NoDiploma">Central Board of Secondary Education</option>
                             <option value="Other">Other</option>
                           </Form.Select>
                         </FloatingLabel>
-                        <FloatingLabel controlId="floatingDiplomaMarks" label="Diploma CGPA">
+                        <FloatingLabel controlId="floatingDiplomaMarks" label="10th Board Percentage">
                           <Form.Control
                             type="number"
-                            placeholder="Diploma Percentage"
+                            placeholder="10th Board Percentage"
                             name='diplomaPercentage'
                             value={userData?.studentProfile?.pastQualification?.diploma?.percentage || ""}
                             onChange={(e) => {
@@ -594,10 +594,10 @@ function UpdatePlacementProfile() {
                             }}
                           />
                         </FloatingLabel>
-                        <FloatingLabel controlId="floatingSelectDiplomaPassingYear" label="Diploma Passing Year">
+                        <FloatingLabel controlId="floatingSelectDiplomaPassingYear" label="10th Board Passing Year">
                           <Form.Control
                             type="number"
-                            placeholder="Diploma Passing Year"
+                            placeholder="10th Board Passing Year"
                             name='diplomaPassingYear'
                             value={userData?.studentProfile?.pastQualification?.diploma?.year || ""}
                             onChange={(e) => {
@@ -622,7 +622,7 @@ function UpdatePlacementProfile() {
                   </div>
                 </div>
                 <div
-                  className="flex flex-col justify-center items-center gap-2"
+                  className="flex flex-col items-center justify-center gap-2"
                   onMouseOver={(e) => {
                     e.target.querySelector('Button i').classList.add('fa-beat');
                   }}
@@ -631,7 +631,7 @@ function UpdatePlacementProfile() {
                   }}
                 >
                   <Button variant="primary" type='submit' size='lg'>
-                    <i className="fa-regular fa-floppy-disk mr-2" />
+                    <i className="mr-2 fa-regular fa-floppy-disk" />
                     Save
                   </Button>
                 </div>

@@ -11,7 +11,7 @@ import { BASE_URL } from '../config/backend_url';
 import TablePlaceholder from './TablePlaceholder';
 
 function AddInternship() {
-  document.title = 'CPMS | My Internships';
+  document.title = 'CareerConnect | My Internships';
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -161,7 +161,7 @@ function AddInternship() {
               // fake table loading animation 
               <TablePlaceholder />
             ) : (
-              <Table striped bordered hover className='bg-white my-6 rounded-lg shadow w-full text-base max-lg:text-sm max-md:my-3'>
+              <Table striped bordered hover className='w-full my-6 text-base bg-white rounded-lg shadow max-lg:text-sm max-md:my-3'>
                 <thead>
                   <tr>
                     <th style={{ width: '6%' }}>Sr. No.</th>
@@ -187,7 +187,7 @@ function AddInternship() {
                         <td>
                           {
                             internship?.companyWebsite ? (
-                              <a href={internship?.companyWebsite} target='_blanck' className='no-underline text-blue-500 hover:text-blue-700'>
+                              <a href={internship?.companyWebsite} target='_blanck' className='text-blue-500 no-underline hover:text-blue-700'>
                                 {internship?.companyWebsite}
                               </a>
                             ) : '-'
@@ -207,7 +207,7 @@ function AddInternship() {
                         </td>
                         <td>
                           {/* for hover label effect  */}
-                          <div className="flex justify-around items-center max-lg:flex-col max-lg:gap-1">
+                          <div className="flex items-center justify-around max-lg:flex-col max-lg:gap-1">
                             <div className="px-0.5">
                               {/* edit internship  */}
                               <OverlayTrigger
@@ -216,7 +216,7 @@ function AddInternship() {
                                 overlay={renderTooltipEditInternship}
                               >
                                 <i
-                                  className="fa-regular fa-pen-to-square text-2xl cursor-pointer transition-colors duration-200 ease-in-out hover:text-blue-500"
+                                  className="text-2xl transition-colors duration-200 ease-in-out cursor-pointer fa-regular fa-pen-to-square hover:text-blue-500"
                                   onClick={() => navigate(`../student/add-internship/${internship._id}`)}
                                   onMouseEnter={(e) => {
                                     e.target.classList.add('fa-solid');
@@ -237,7 +237,7 @@ function AddInternship() {
                                 overlay={renderTooltipDeleteInternship}
                               >
                                 <i
-                                  className="fa-regular fa-trash-can text-2xl cursor-pointer transition-colors duration-200 ease-in-out hover:text-red-500"
+                                  className="text-2xl transition-colors duration-200 ease-in-out cursor-pointer fa-regular fa-trash-can hover:text-red-500"
                                   onClick={() => handleDeleteInternship(internship?._id, internship?.companyName)}
                                   onMouseEnter={(e) => {
                                     e.target.classList.add('fa-solid');

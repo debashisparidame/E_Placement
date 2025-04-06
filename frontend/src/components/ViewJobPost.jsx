@@ -10,7 +10,7 @@ import { BASE_URL } from '../config/backend_url';
 
 
 function ViewJobPost() {
-  document.title = 'CPMS | View Job Post';
+  document.title = 'CareerConnect | View Job Post';
   const { jobId } = useParams();
 
   const [data, setData] = useState({});
@@ -189,8 +189,8 @@ function ViewJobPost() {
 
       {
         loading ? (
-          <div className="flex justify-center h-72 items-center">
-            <i className="fa-solid fa-spinner fa-spin text-3xl" />
+          <div className="flex items-center justify-center h-72">
+            <i className="text-3xl fa-solid fa-spinner fa-spin" />
           </div>
         ) : (
           <>
@@ -199,60 +199,60 @@ function ViewJobPost() {
 
                 <div className="">
                   {/* Company Details  */}
-                  <Accordion defaultActiveKey={['0']} alwaysOpen className='shadow rounded'>
+                  <Accordion defaultActiveKey={['0']} alwaysOpen className='rounded shadow'>
                     <Accordion.Item eventKey="0">
                       <Accordion.Header>Company Details</Accordion.Header>
                       <Accordion.Body>
                         <div className="">
                           {/* company name  */}
-                          <h3 className='text-3xl text-center border-b-2 py-4 mb-4'>
+                          <h3 className='py-4 mb-4 text-3xl text-center border-b-2'>
                             {company?.companyName}
                           </h3>
-                          <div className="border-b-2 px-2 pb-4 text-gray-500 text-justify leading-5">
+                          <div className="px-2 pb-4 leading-5 text-justify text-gray-500 border-b-2">
                             {company?.companyDescription}
                           </div>
-                          <div className="flex justify-between p-2 border-b-2 my-2">
+                          <div className="flex justify-between p-2 my-2 border-b-2">
                             {/* company website  */}
                             <span>Website</span>
-                            <span className='bg-blue-500 py-1 px-2 text-white rounded cursor-pointer'>
+                            <span className='px-2 py-1 text-white bg-blue-500 rounded cursor-pointer'>
                               <a
                                 href={`${company?.companyWebsite}`}
                                 target='_blanck'
-                                className='no-underline text-white'
+                                className='text-white no-underline'
                               >
                                 {company?.companyWebsite}
                               </a>
                             </span>
                           </div>
-                          <div className="flex justify-between p-2 border-b-2 my-2">
+                          <div className="flex justify-between p-2 my-2 border-b-2">
                             {/* company location  */}
                             <span>Job Locations</span>
                             <div className="flex gap-2">
                               {company?.companyLocation?.split(',').map((location, index) => (
-                                <span key={index} className='bg-blue-500 py-1 px-2 text-white rounded'>
+                                <span key={index} className='px-2 py-1 text-white bg-blue-500 rounded'>
                                   {location.trim()}
                                 </span>
                               ))}
                             </div>
                           </div>
-                          <div className="flex justify-between p-2 border-b-2 my-2">
+                          <div className="flex justify-between p-2 my-2 border-b-2">
                             {/* company difficulty  */}
                             <span>Difficulty Level</span>
                             {
                               company?.companyDifficulty === "Easy" &&
-                              <span className='bg-green-500 py-1 px-2 text-white rounded'>
+                              <span className='px-2 py-1 text-white bg-green-500 rounded'>
                                 {company?.companyDifficulty}
                               </span>
                             }
                             {
                               company?.companyDifficulty === "Moderate" &&
-                              <span className='bg-orange-500 py-1 px-2 text-white rounded'>
+                              <span className='px-2 py-1 text-white bg-orange-500 rounded'>
                                 {company?.companyDifficulty}
                               </span>
                             }
                             {
                               company?.companyDifficulty === "Hard" &&
-                              <span className='bg-red-500 py-1 px-2 text-white rounded'>
+                              <span className='px-2 py-1 text-white bg-red-500 rounded'>
                                 {company?.companyDifficulty}
                               </span>
                             }
@@ -269,7 +269,7 @@ function ViewJobPost() {
                       {/* pending */}
                       <div className="">
                         {/* Applicants applied */}
-                        <Accordion defaultActiveKey={['3']} alwaysOpen className='shadow rounded'>
+                        <Accordion defaultActiveKey={['3']} alwaysOpen className='rounded shadow'>
                           <Accordion.Item eventKey="3">
                             <Accordion.Header>Applicants Applied</Accordion.Header>
                             <Accordion.Body>
@@ -344,14 +344,14 @@ function ViewJobPost() {
 
               <div className="">
                 {/* Job details  */}
-                <Accordion defaultActiveKey={['1']} alwaysOpen className='shadow rounded'>
+                <Accordion defaultActiveKey={['1']} alwaysOpen className='rounded shadow'>
                   <Accordion.Item eventKey="1">
                     <Accordion.Header>Job Details</Accordion.Header>
                     <Accordion.Body>
                       <div className="flex flex-col gap-4">
                         {/* job title  */}
-                        <div className="flex flex-col backdrop-blur-md bg-white/30 border border-white/20 rounded-lg px-2 shadow-sm shadow-red-400">
-                          <span className='text-xl text-blue-500 py-2 border-b-2'>
+                        <div className="flex flex-col px-2 border rounded-lg shadow-sm backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
+                          <span className='py-2 text-xl text-blue-500 border-b-2'>
                             Job Title
                           </span>
                           <span className='py-3'>
@@ -359,22 +359,22 @@ function ViewJobPost() {
                           </span>
                         </div>
                         {/* job Profile  */}
-                        <div className="flex flex-col backdrop-blur-md bg-white/30 border border-white/20 rounded-lg px-2 shadow-sm shadow-red-400">
-                          <span className='text-xl text-blue-500 py-2 border-b-2'>
+                        <div className="flex flex-col px-2 border rounded-lg shadow-sm backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
+                          <span className='py-2 text-xl text-blue-500 border-b-2'>
                             Job Profile
                           </span>
                           <span className='py-3' dangerouslySetInnerHTML={{ __html: data?.jobDescription }} />
                         </div>
                         {/* job eligibility  */}
-                        <div className="flex flex-col backdrop-blur-md bg-white/30 border border-white/20 rounded-lg px-2 shadow-sm shadow-red-400">
-                          <span className='text-xl text-blue-500 py-2 border-b-2'>
+                        <div className="flex flex-col px-2 border rounded-lg shadow-sm backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
+                          <span className='py-2 text-xl text-blue-500 border-b-2'>
                             Eligibility
                           </span>
                           <span className='py-3' dangerouslySetInnerHTML={{ __html: data?.eligibility }} />
                         </div>
                         {/* job salary  */}
-                        <div className="flex flex-col backdrop-blur-md bg-white/30 border border-white/20 rounded-lg px-2 shadow-sm shadow-red-400">
-                          <span className='text-xl text-blue-500 py-2 border-b-2'>
+                        <div className="flex flex-col px-2 border rounded-lg shadow-sm backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
+                          <span className='py-2 text-xl text-blue-500 border-b-2'>
                             Annual CTC
                           </span>
                           <span className='py-3'>
@@ -382,8 +382,8 @@ function ViewJobPost() {
                           </span>
                         </div>
                         {/* job deadline  */}
-                        <div className="flex flex-col backdrop-blur-md bg-white/30 border border-white/20 rounded-lg px-2 shadow-sm shadow-red-400">
-                          <span className='text-xl text-blue-500 py-2 border-b-2'>
+                        <div className="flex flex-col px-2 border rounded-lg shadow-sm backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
+                          <span className='py-2 text-xl text-blue-500 border-b-2'>
                             Last Date of Application
                           </span>
                           <span className='py-3'>
@@ -397,8 +397,8 @@ function ViewJobPost() {
                         {/* how to apply  */}
                         {
                           (applied === true || currentUser?.role !== 'student') && (
-                            <div className="flex flex-col backdrop-blur-md bg-white/30 border border-white/20 rounded-lg px-2 shadow-sm shadow-red-400">
-                              <span className='text-xl text-blue-500 py-2 border-b-2'>
+                            <div className="flex flex-col px-2 border rounded-lg shadow-sm backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
+                              <span className='py-2 text-xl text-blue-500 border-b-2'>
                                 How to Apply?
                               </span>
                               <span className='py-3' dangerouslySetInnerHTML={{ __html: data?.howToApply }} />
@@ -411,13 +411,13 @@ function ViewJobPost() {
                               {
                                 applied === false ? (
                                   <Button variant="warning" onClick={handleApply}>
-                                    <i className="fa-solid fa-check px-2" />
+                                    <i className="px-2 fa-solid fa-check" />
                                     Apply Now
                                   </Button>
                                 ) : (
                                   <Link to={`/student/status/${jobId}`}>
                                     <Button variant="warning">
-                                      <i className="fa-solid fa-check px-2" />
+                                      <i className="px-2 fa-solid fa-check" />
                                       Update Status
                                     </Button>
                                   </Link>

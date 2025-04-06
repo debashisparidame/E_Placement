@@ -8,7 +8,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import { BASE_URL } from '../../config/backend_url';
 
 function MyApplied() {
-  document.title = 'CPMS | My Applied Job';
+  document.title = 'CareerConnect | My Applied Job';
   const [loading, setLoading] = useState(true);
 
   // useState for load data
@@ -74,7 +74,7 @@ function MyApplied() {
           <TablePlaceholder />
         ) : (
           <div className="overflow-auto">
-            <Table striped bordered hover className='bg-white my-6 rounded-lg shadow w-full text-base max-sm:text-sm'>
+            <Table striped bordered hover className='w-full my-6 text-base bg-white rounded-lg shadow max-sm:text-sm'>
               <thead>
                 <tr>
                   <th style={{ width: '6%' }}>Sr. No.</th>
@@ -118,7 +118,7 @@ function MyApplied() {
                       </td>
                       <td>
                         {/* for hover label effect  */}
-                        <div className="flex justify-around items-center">
+                        <div className="flex items-center justify-around">
                           <div className="px-0.5">
                             {/* view post  */}
                             <OverlayTrigger
@@ -127,7 +127,7 @@ function MyApplied() {
                               overlay={renderTooltipViewPost}
                             >
                               <Link className="text-black" to={`/student/job/${job.jobId}`}>
-                                <i className='fa-solid fa-circle-info text-2xl max-sm:text-lg cursor-pointer transition-colors duration-200 ease-in-out hover:text-blue-500' />
+                                <i className='text-2xl transition-colors duration-200 ease-in-out cursor-pointer fa-solid fa-circle-info max-sm:text-lg hover:text-blue-500' />
                               </Link>
                             </OverlayTrigger>
                           </div>

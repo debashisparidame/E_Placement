@@ -9,7 +9,7 @@ import ModalBox from '../Modal';
 import { BASE_URL } from '../../config/backend_url';
 
 function AddCompany() {
-  document.title = 'CPMS | Add Company';
+  document.title = 'CareerConnect | Add Company';
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
@@ -104,13 +104,13 @@ function AddCompany() {
 
       {
         loading ? (
-          <div className="flex justify-center h-72 items-center">
-            <i className="fa-solid fa-spinner fa-spin text-3xl" />
+          <div className="flex items-center justify-center h-72">
+            <i className="text-3xl fa-solid fa-spinner fa-spin" />
           </div>
         ) : (
           <>
             <Form onSubmit={handleSubmit}>
-              <div className="my-8 text-base backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6 max-sm:text-sm max-sm:p-3">
+              <div className="p-6 my-8 text-base border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400 max-sm:text-sm max-sm:p-3">
                 <div className="flex flex-col gap-2">
                   <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
                     <FloatingLabel controlId="floatingCompanyName" label={
@@ -198,7 +198,7 @@ function AddCompany() {
                   </div>
                 }
               </div>
-              <div className="flex flex-col justify-center items-center gap-2">
+              <div className="flex flex-col items-center justify-center gap-2">
                 <Button variant="primary" type='submit' size='lg'>
                   {
                     companyId

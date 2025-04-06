@@ -28,8 +28,8 @@ function LandFooter() {
 
         {/* Footer Text */}
         <div className="text-sm text-center text-gray-600">
-          <p>© 2025 <span className="font-semibold text-green-600">College Placement Portal</span>. All rights reserved.</p>
-          <p className="mt-1 text-xs text-gray-500">Developed by Debashis & Team of KIIT University</p>
+          <p>© 2025 <span className="font-semibold text-green-600">CareerConnect</span>. All rights reserved.</p>
+          <p className="mt-1 text-xs text-gray-500">Developed by <span className="font-semibold text-orange-700">Debashis & Team</span> of KIIT University</p>
         </div>
       </div>
     </footer>

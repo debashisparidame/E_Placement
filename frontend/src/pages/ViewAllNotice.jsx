@@ -10,7 +10,7 @@ import { BASE_URL } from '../config/backend_url';
 
 
 function ViewlAllNotice() {
-  document.title = 'CPMS | Notices';
+  document.title = 'CareerConnect | Notices';
   const [loading, setLoading] = useState(true);
   const [noticesData, setNoticesData] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
@@ -118,7 +118,7 @@ function ViewlAllNotice() {
         ) : (
           <>
             <div className=''>
-              <Table striped bordered hover className='bg-white my-6 rounded-lg shadow w-full text-base max-sm:text-sm'>
+              <Table striped bordered hover className='w-full my-6 text-base bg-white rounded-lg shadow max-sm:text-sm'>
                 <thead>
                   <tr>
                     <th style={{ width: '2%' }}>#</th>
@@ -158,7 +158,7 @@ function ViewlAllNotice() {
                                     ? `/management/notice/${notice?._id}`
                                     : ''
                             }
-                            className='no-underline text-blue-500 hover:text-blue-700'
+                            className='text-blue-500 no-underline hover:text-blue-700'
                           >
                             {notice?.title}
                             {(new Date() - new Date(notice?.createdAt)) / (1000 * 60 * 60 * 24) <= 2 && (
@@ -195,14 +195,14 @@ function ViewlAllNotice() {
                               <>
                                 <td>
                                   {/* for hover label effect  */}
-                                  <div className="flex justify-around items-center">
+                                  <div className="flex items-center justify-around">
                                     <OverlayTrigger
                                       placement="top"
                                       delay={{ show: 250, hide: 400 }}
                                       overlay={renderTooltipDelete}
                                     >
                                       <i
-                                        className="fa-regular fa-trash-can text-2xl cursor-pointer hover:text-red-500"
+                                        className="text-2xl cursor-pointer fa-regular fa-trash-can hover:text-red-500"
                                         onClick={() => handleDelete(notice._id)}
                                         onMouseEnter={(e) => {
                                           e.target.classList.remove('fa-regular');

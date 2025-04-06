@@ -9,7 +9,7 @@ import ModalBox from '../Modal';
 import { BASE_URL } from '../../config/backend_url';
 
 function AddInternship() {
-  document.title = 'CPMS | Add Internships';
+  document.title = 'CareerConnect | Add Internships';
   const [loading, setLoading] = useState(true);
   const { internshipId } = useParams();
   const navigate = useNavigate();
@@ -147,12 +147,12 @@ function AddInternship() {
 
       {
         loading ? (
-          <div className="flex justify-center h-72 items-center">
-            <i className="fa-solid fa-spinner fa-spin text-3xl" />
+          <div className="flex items-center justify-center h-72">
+            <i className="text-3xl fa-solid fa-spinner fa-spin" />
           </div>
         ) : (
           <>
-            <div className="my-8 backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6">
+            <div className="p-6 my-8 border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
               <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
                 <FloatingLabel controlId="floatingCompanyName" label={
                   <>
@@ -267,7 +267,7 @@ function AddInternship() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center gap-2">
+            <div className="flex flex-col items-center justify-center gap-2">
               <Button variant="primary" type='submit' size='lg' onClick={handleSubmit}>
                 Update
               </Button>

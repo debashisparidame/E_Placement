@@ -13,7 +13,7 @@ import { PiEyeClosed } from "react-icons/pi";
 import { BASE_URL } from '../../config/backend_url';
 
 function UpdateJobStatus() {
-  document.title = 'CPMS | Update Job Application Status';
+  document.title = 'CareerConnect | Update Job Application Status';
   const navigate = useNavigate();
 
   const { jobId } = useParams();
@@ -220,8 +220,8 @@ function UpdateJobStatus() {
 
       {
         loading ? (
-          <div className="flex justify-center h-72 items-center">
-            <i className="fa-solid fa-spinner fa-spin text-3xl" />
+          <div className="flex items-center justify-center h-72">
+            <i className="text-3xl fa-solid fa-spinner fa-spin" />
           </div>
         ) : (
           <>
@@ -229,7 +229,7 @@ function UpdateJobStatus() {
               <div className="flex flex-col gap-2">
                 <div className="">
                   {/* Basic Details  */}
-                  <Accordion defaultActiveKey={['0']} alwaysOpen className='shadow rounded w-full max-sm:w-fit'>
+                  <Accordion defaultActiveKey={['0']} alwaysOpen className='w-full rounded shadow max-sm:w-fit'>
                     <Accordion.Item eventKey="0">
                       <Accordion.Header>Basic Details</Accordion.Header>
                       <Accordion.Body>
@@ -240,8 +240,8 @@ function UpdateJobStatus() {
                             <div className="flex justify-between">
                               <div className="space-y-4">
                                 <div>
-                                  <span className="text-gray-700 font-bold">Full Name: </span>
-                                  <span className="text-blue-500 font-bold">
+                                  <span className="font-bold text-gray-700">Full Name: </span>
+                                  <span className="font-bold text-blue-500">
                                     {currentUser?.first_name + " "}
                                     {currentUser?.middle_name && currentUser?.middle_name + " "}
                                     {currentUser?.last_name}
@@ -249,15 +249,15 @@ function UpdateJobStatus() {
                                 </div>
 
                                 <div>
-                                  <span className="text-gray-700 font-bold">Email: </span>
-                                  <span className="text-blue-500 font-bold">
+                                  <span className="font-bold text-gray-700">Email: </span>
+                                  <span className="font-bold text-blue-500">
                                     {currentUser?.email}
                                   </span>
                                 </div>
 
                                 <div>
-                                  <span className="text-gray-700 font-bold">Number: </span>
-                                  <span className="text-blue-500 font-bold">
+                                  <span className="font-bold text-gray-700">Number: </span>
+                                  <span className="font-bold text-blue-500">
                                     {currentUser?.number}
                                   </span>
                                 </div>
@@ -265,22 +265,22 @@ function UpdateJobStatus() {
                                 {
                                   currentUser?.uin && (
                                     <div>
-                                      <span className="text-gray-700 font-bold">UIN: </span>
-                                      <span className="text-blue-500 font-bold">
+                                      <span className="font-bold text-gray-700">UIN: </span>
+                                      <span className="font-bold text-blue-500">
                                         {currentUser?.uin}
                                       </span>
                                     </div>
                                   )
                                 }
                                 <div>
-                                  <span className="text-gray-700 font-bold">Company Name: </span>
-                                  <span className="text-blue-500 font-bold">
+                                  <span className="font-bold text-gray-700">Company Name: </span>
+                                  <span className="font-bold text-blue-500">
                                     {company?.companyName}
                                   </span>
                                 </div>
                                 <div>
-                                  <span className="text-gray-700 font-bold">Job Title: </span>
-                                  <span className="text-blue-500 font-bold">
+                                  <span className="font-bold text-gray-700">Job Title: </span>
+                                  <span className="font-bold text-blue-500">
                                     {data?.jobTitle}
                                   </span>
                                 </div>
@@ -295,7 +295,7 @@ function UpdateJobStatus() {
               </div>
               <div className="">
                 {/* Job details  */}
-                <Accordion defaultActiveKey={['1']} alwaysOpen className='shadow rounded w-full max-sm:w-fit'>
+                <Accordion defaultActiveKey={['1']} alwaysOpen className='w-full rounded shadow max-sm:w-fit'>
                   <Accordion.Item eventKey="1">
                     <Accordion.Header>Job Details</Accordion.Header>
                     <Accordion.Body>
@@ -352,21 +352,21 @@ function UpdateJobStatus() {
                               onChange={handleApplicantChange}
                             />
                           </FloatingLabel>
-                          <div className="flex flex-col gap-2 justify-center items-center">
+                          <div className="flex flex-col items-center justify-center gap-2">
 
                             {/* offer letter upload */}
                             {/* sending jobId and function update applicant useState  */}
                             <UploadOfferLetter jobId={jobId} fetchJobDetailsOfApplicant={fetchJobDetailsOfApplicant} />
                             {
                               applicant?.offerLetter &&
-                              <div className="cursor-pointer w-fit flex gap-1 justify-between items-center">
+                              <div className="flex items-center justify-between gap-1 cursor-pointer w-fit">
                                 <span
-                                  className='bg-blue-500 px-3 py-1 rounded transition duration-300 ease-in-out hover:bg-blue-700'
+                                  className='px-3 py-1 transition duration-300 ease-in-out bg-blue-500 rounded hover:bg-blue-700'
                                   onMouseEnter={() => setEyeIsHover(true)}
                                   onMouseLeave={() => setEyeIsHover(false)}
                                 >
                                   <a
-                                    className='text-white no-underline flex justify-center items-center'
+                                    className='flex items-center justify-center text-white no-underline'
                                     target="_blanck"
                                     href={BASE_URL + applicant?.offerLetter}
                                   >
@@ -382,7 +382,7 @@ function UpdateJobStatus() {
                                 </span>
                                 {/* delete offer letter  */}
                                 <span
-                                  className='text-white bg-red-500 px-3 py-1 rounded transition-all duration-200 hover:bg-red-700'
+                                  className='px-3 py-1 text-white transition-all duration-200 bg-red-500 rounded hover:bg-red-700'
                                   onClick={handleDelete}
                                   onMouseEnter={(e) => {
                                     const icon = e.target.querySelector('i');
@@ -396,7 +396,7 @@ function UpdateJobStatus() {
                                   }}
                                 >
                                   <i
-                                    className="fa-regular fa-trash-can pr-2 py-1 text-lg"
+                                    className="py-1 pr-2 text-lg fa-regular fa-trash-can"
                                   />
                                   Delete
                                 </span>
@@ -442,9 +442,9 @@ function UpdateJobStatus() {
                             )
                           }
                         </div>
-                        <div className="mb-2 mt-3">
+                        <div className="mt-3 mb-2">
                           <Button variant="primary" onClick={handleSubmit}>
-                            <i className="fa-solid fa-floppy-disk pr-2" />
+                            <i className="pr-2 fa-solid fa-floppy-disk" />
                             Update
                           </Button>
                         </div>

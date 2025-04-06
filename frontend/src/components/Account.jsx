@@ -10,7 +10,7 @@ import Toast from './Toast';
 import { BASE_URL } from '../config/backend_url';
 
 function Account() {
-  document.title = 'CPMS | Account';
+  document.title = 'CareerConnect | Account';
 
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -161,8 +161,8 @@ function Account() {
     <>
       {
         loading ? (
-          <div className="flex justify-center h-72 items-center">
-            <i className="fa-solid fa-spinner fa-spin text-3xl" />
+          <div className="flex items-center justify-center h-72">
+            <i className="text-3xl fa-solid fa-spinner fa-spin" />
           </div>
         ) : (
           <>
@@ -175,13 +175,13 @@ function Account() {
               position="bottom-end"
             />
 
-            <div className="max-sm:text-sm text-base">
+            <div className="text-base max-sm:text-sm">
               <div className="container grid grid-cols-3 gap-3 p-4 max-lg:grid-cols-2 max-sm:grid-cols-1">
 
                 {/* basic details */}
-                <div className="col-span-2 bg-white p-6 rounded-lg shadow-md w-full">
+                <div className="w-full col-span-2 p-6 bg-white rounded-lg shadow-md">
                   <Form onSubmit={handleBasicDetailSubmit}>
-                    <div className="grid grid-cols-2 gap-2  justify-center items-start">
+                    <div className="grid items-start justify-center grid-cols-2 gap-2">
                       <FloatingLabel label="First Name">
                         <Form.Control
                           type="text"
@@ -273,7 +273,7 @@ function Account() {
                     </div>
                     <button
                       type="submit"
-                      className="flex items-center my-2 px-3 py-2 bg-blue-500 text-white rounded"
+                      className="flex items-center px-3 py-2 my-2 text-white bg-blue-500 rounded"
                     >
                       <FaRegSave className="mr-2" />
                       Save
@@ -282,7 +282,7 @@ function Account() {
                 </div>
 
                 {/* address box */}
-                <div className="bg-white p-6 rounded-lg shadow-md w-full max-sm:col-span-2">
+                <div className="w-full p-6 bg-white rounded-lg shadow-md max-sm:col-span-2">
                   <Form onSubmit={handleBasicDetailSubmit}>
                     <div className="grid gap-2 ">
                       <FloatingLabel className='w-full' controlId="floatingTextareaAddress" label="Address">
@@ -332,7 +332,7 @@ function Account() {
                     </div>
                     <button
                       type="submit"
-                      className="flex items-center my-2 px-3 py-2 bg-blue-500 text-white rounded"
+                      className="flex items-center px-3 py-2 my-2 text-white bg-blue-500 rounded"
                     >
                       <FaMapLocationDot className="mr-2" />
                       Change Address
@@ -341,9 +341,9 @@ function Account() {
                 </div>
 
                 {/* photo box */}
-                <div className="bg-white p-6 rounded-lg shadow-md w-full max-sm:col-span-2">
+                <div className="w-full p-6 bg-white rounded-lg shadow-md max-sm:col-span-2">
                   <div className="">
-                    <Form className='flex flex-col justify-center items-center gap-3 text-center'>
+                    <Form className='flex flex-col items-center justify-center gap-3 text-center'>
                       <img src={data.profile} alt="Profile Img" width="150" height="150" className='rounded-full' />
                       <Form.Group controlId="formFile" className="mb-3 text-xl" onChange={handlePhotoChange}>
                         <Form.Label>{data.first_name + " " + data.middle_name + " " + data.last_name}</Form.Label>
@@ -354,7 +354,7 @@ function Account() {
                 </div>
 
                 {/* password box */}
-                <div className="bg-white p-6 rounded-lg shadow-md w-full col-span-2">
+                <div className="w-full col-span-2 p-6 bg-white rounded-lg shadow-md">
                   <Form onSubmit={handlePassUpdate}>
                     <div className="grid gap-2 ">
                       <FloatingLabel label="Current Password">
@@ -397,7 +397,7 @@ function Account() {
                     }
                     <button
                       type="submit"
-                      className="flex items-center my-2 px-3 py-2 bg-blue-500 text-white rounded"
+                      className="flex items-center px-3 py-2 my-2 text-white bg-blue-500 rounded"
                     >
                       <RiKeyFill className="mr-2" />
                       Change Password

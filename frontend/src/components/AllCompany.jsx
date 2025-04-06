@@ -11,7 +11,7 @@ import { BASE_URL } from '../config/backend_url';
 import TablePlaceholder from './TablePlaceholder';
 
 function AllCompany() {
-  document.title = 'CPMS | All Company';
+  document.title = 'CareerConnect | All Company';
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -166,7 +166,7 @@ function AllCompany() {
               // fake table loading animation 
               <TablePlaceholder />
             ) : (
-              <Table striped bordered hover className='bg-white my-6 rounded-lg shadow w-full text-base max-sm:text-sm max-sm:my-3'>
+              <Table striped bordered hover className='w-full my-6 text-base bg-white rounded-lg shadow max-sm:text-sm max-sm:my-3'>
                 <thead>
                   <tr>
                     <th style={{ width: '7%' }}>Sr. No.</th>
@@ -203,13 +203,13 @@ function AllCompany() {
                         </td>
                         <td>
                           {company?.companyDifficulty === "Easy" && (
-                            <span className='bg-green-500 text-white px-2 py-1 rounded'>{company?.companyDifficulty}</span>
+                            <span className='px-2 py-1 text-white bg-green-500 rounded'>{company?.companyDifficulty}</span>
                           )}
                           {company?.companyDifficulty === "Moderate" && (
-                            <span className='bg-orange-500 text-white px-2 py-1 rounded'>{company?.companyDifficulty}</span>
+                            <span className='px-2 py-1 text-white bg-orange-500 rounded'>{company?.companyDifficulty}</span>
                           )}
                           {company?.companyDifficulty === "Hard" && (
-                            <span className='bg-red-500 text-white px-2 py-1 rounded'>{company?.companyDifficulty}</span>
+                            <span className='px-2 py-1 text-white bg-red-500 rounded'>{company?.companyDifficulty}</span>
                           )}
                         </td>
                         <td>
@@ -220,7 +220,7 @@ function AllCompany() {
                         </td>
                         <td>
                           {/* for hover label effect  */}
-                          <div className="flex justify-around items-center max-sm:flex-col max-sm:gap-1">
+                          <div className="flex items-center justify-around max-sm:flex-col max-sm:gap-1">
                             <div className="px-0.5">
                               {/* edit company  */}
                               <OverlayTrigger
@@ -229,7 +229,7 @@ function AllCompany() {
                                 overlay={renderTooltipEditCompany}
                               >
                                 <i
-                                  className="fa-regular fa-pen-to-square text-2xl max-sm:text-lg cursor-pointer transition-colors duration-200 ease-in-out hover:text-blue-500"
+                                  className="text-2xl transition-colors duration-200 ease-in-out cursor-pointer fa-regular fa-pen-to-square max-sm:text-lg hover:text-blue-500"
                                   onClick={() => {
                                     if (currentUser === 'tpo_admin') navigate(`../tpo/add-company/${company._id}`)
                                     else if (currentUser === 'management_admin') navigate(`../management/add-company/${company._id}`);
@@ -254,7 +254,7 @@ function AllCompany() {
                                 overlay={renderTooltipDeleteCompany}
                               >
                                 <i
-                                  className="fa-regular fa-trash-can text-2xl max-sm:text-lg cursor-pointer transition-colors duration-200 ease-in-out hover:text-red-500"
+                                  className="text-2xl transition-colors duration-200 ease-in-out cursor-pointer fa-regular fa-trash-can max-sm:text-lg hover:text-red-500"
                                   onClick={() => handleDeleteCompany(company?.companyName, company?._id)}
                                   onMouseEnter={(e) => {
                                     e.target.classList.add('fa-solid');

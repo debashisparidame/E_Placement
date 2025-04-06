@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HeroImg from '../../assets/heroImg.jpg';
 import { useNavigate } from 'react-router-dom';
+import './styles/animations.css'; // Now correctly points to the CSS file
 
 function LandingHeroPage() {
   const navigate = useNavigate();
@@ -30,14 +31,24 @@ function LandingHeroPage() {
       {/* Content */}
       <div className="relative z-20 max-w-5xl text-center">
         <h1 className="text-5xl font-extrabold leading-tight text-white sm:text-6xl md:text-7xl drop-shadow-md">
-          Empower Your Career with <br />
-          <span className="text-3xl text-transparent bg-gradient-to-r from-red-700 via-blue-700 to-purple-800 bg-clip-text sm:text-4xl md:text-5xl">
-            College Placement Portal
+        Launch Your Professional Journey with <br />
+          <span className="text-3xl animate-career-connect sm:text-4xl md:text-5xl hover:scale-105">
+            {'CareerConnect'.split('').map((letter, index) => (
+              <span 
+                key={index} 
+                style={{ 
+                  animationDelay: `${index * 0.15}s`,
+                  transition: 'color 0.3s ease'
+                }}
+              >
+                {letter}
+              </span>
+            ))}
           </span>
         </h1>
 
         <p className="mt-6 text-lg font-light text-gray-300 sm:text-xl">
-          Discover opportunities, track progress, and connect with your tpo — all in one place.
+        Navigate Your Career Path with Ease—Discover, Track, Connect.
         </p>
 
         <div className="flex flex-col items-center justify-center gap-4 mt-10 sm:flex-row">
@@ -58,14 +69,14 @@ function LandingHeroPage() {
         </div>
 
         {/* Call-to-action */}
-        <div className="mt-8">
+        {/* <div className="mt-8">
           <p
             className="inline-block mt-4 text-sm text-white underline transition duration-300 cursor-pointer opacity-70 hover:opacity-100 underline-offset-4"
             onClick={handleScrollAbout}
           >
             Learn more about CPMS
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

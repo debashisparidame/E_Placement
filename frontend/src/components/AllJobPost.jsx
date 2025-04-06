@@ -11,7 +11,7 @@ import TablePlaceholder from './TablePlaceholder';
 import { BASE_URL } from '../config/backend_url';
 
 function AllJobPost() {
-  document.title = 'CPMS | Job Listings';
+  document.title = 'CareerConnect | Job Listings';
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -152,7 +152,7 @@ function AllJobPost() {
           ) : (
             <div className="overflow-x-auto max-sm:text-sm max-sm:p-1">
               <div className="table-scrollbar">
-                <Table striped bordered hover className='bg-white my-6 rounded-lg shadow w-full'>
+                <Table striped bordered hover className='w-full my-6 bg-white rounded-lg shadow'>
                   <thead>
                     <tr>
                       <th>Sr. No.</th>
@@ -193,7 +193,7 @@ function AllJobPost() {
                             <td>{new Date(job?.applicationDeadline).toLocaleDateString('en-In')}</td>
                             <td>{job?.applicants?.length}</td>
                             <td>
-                              <div className="flex justify-around items-center">
+                              <div className="flex items-center justify-around">
                                 <div className="px-0.5">
                                   {/* View Post */}
                                   <OverlayTrigger
@@ -202,7 +202,7 @@ function AllJobPost() {
                                     overlay={<Tooltip>View Post</Tooltip>}
                                   >
                                     <i
-                                      className="fa-solid fa-circle-info text-2xl max-sm:text-lg cursor-pointer transition-colors duration-200 ease-in-out hover:text-blue-500"
+                                      className="text-2xl transition-colors duration-200 ease-in-out cursor-pointer fa-solid fa-circle-info max-sm:text-lg hover:text-blue-500"
                                       onClick={() => {
                                         const rolePaths = {
                                           'tpo_admin': `../tpo/job/${job._id}`,
@@ -226,7 +226,7 @@ function AllJobPost() {
                                           overlay={<Tooltip>Edit Post</Tooltip>}
                                         >
                                           <i
-                                            className="fa-regular fa-pen-to-square text-2xl max-sm:text-lg cursor-pointer transition-colors duration-200 ease-in-out hover:text-green-500 hover:fa-solid"
+                                            className="text-2xl transition-colors duration-200 ease-in-out cursor-pointer fa-regular fa-pen-to-square max-sm:text-lg hover:text-green-500 hover:fa-solid"
                                             onClick={() => {
                                               const rolePaths = {
                                                 'tpo_admin': `../tpo/post-job/${job._id}`,
@@ -247,7 +247,7 @@ function AllJobPost() {
                                           overlay={<Tooltip>Delete Post</Tooltip>}
                                         >
                                           <i
-                                            className="fa-regular fa-trash-can text-2xl max-sm:text-lg cursor-pointer transition-colors duration-200 ease-in-out hover:text-red-500 hover:fa-solid"
+                                            className="text-2xl transition-colors duration-200 ease-in-out cursor-pointer fa-regular fa-trash-can max-sm:text-lg hover:text-red-500 hover:fa-solid"
                                             onClick={() => handleDeletePost(job?._id, companies[job?.company], job?.jobTitle)}
                                           />
                                         </OverlayTrigger>

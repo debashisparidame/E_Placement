@@ -10,7 +10,7 @@ import Toast from './Toast';
 import { BASE_URL } from '../config/backend_url';
 
 function UserDetails() {
-  document.title = 'CPMS | Complete Profile';
+  document.title = 'CareerConnect | Complete Profile';
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -185,8 +185,8 @@ function UserDetails() {
     <>
       {
         loading ? (
-          <div className="flex justify-center h-72 items-center">
-            <i className="fa-solid fa-spinner fa-spin text-3xl" />
+          <div className="flex items-center justify-center h-72">
+            <i className="text-3xl fa-solid fa-spinner fa-spin" />
           </div>
         ) : (
           <>
@@ -208,11 +208,11 @@ function UserDetails() {
               </h1>
               <form onSubmit={handleSubmit}>
                 {/* personal info  */}
-                <div className="my-8 backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6">
+                <div className="p-6 my-8 border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
                   <span className="text-xl md:text-2xl">Personal Details</span>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {/* First Column */}
-                    <div className="px-2 py-3 flex flex-col gap-3">
+                    <div className="flex flex-col gap-3 px-2 py-3">
                       <FloatingLabel controlId="floatingFirstName" label="First Name">
                         <Form.Control
                           type="text"
@@ -276,7 +276,7 @@ function UserDetails() {
                     </div>
 
                     {/* Second Column */}
-                    <div className="px-2 py-3 flex flex-col gap-3">
+                    <div className="flex flex-col gap-3 px-2 py-3">
                       <FloatingLabel controlId="floatingSelectGender" label="Gender">
                         <Form.Select
                           aria-label="Floating label select gender"
@@ -352,7 +352,7 @@ function UserDetails() {
                     </div>
 
                     {/* Third Column */}
-                    <div className="px-2 py-3 flex flex-col items-center gap-4 my-1">
+                    <div className="flex flex-col items-center gap-4 px-2 py-3 my-1">
                       <Col className="w-32 md:w-44 lg:w-52">
                         <Image src={userData?.profile} roundedCircle />
                       </Col>
@@ -380,10 +380,10 @@ function UserDetails() {
                 {userData?.role === "student" &&
                   (<>
                     {/* college info  */}
-                    <div className="backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6 my-8">
+                    <div className="p-6 my-8 border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
                       <span className='text-2xl md:text-4xl'>College Information</span>
                       <div className="grid grid-cols-1 md:grid-cols-3">
-                        <div className="px-2 py-3 flex flex-col gap-3">
+                        <div className="flex flex-col gap-3 px-2 py-3">
                           <FloatingLabel controlId="floatingUIN" label="UIN" >
                             <Form.Control
                               type="text"
@@ -424,7 +424,7 @@ function UserDetails() {
                           </FloatingLabel>
                         </div>
 
-                        <div className="px-2 py-3 flex flex-col gap-3">
+                        <div className="flex flex-col gap-3 px-2 py-3">
                           <FloatingLabel controlId="floatingSelectDepartment" label="Department">
                             <Form.Select
                               aria-label="Floating label select department"
@@ -505,7 +505,7 @@ function UserDetails() {
                         </div>
 
                         <div className="grid grid-cols-2 gap-2">
-                          <div className=" py-3 flex flex-wrap gap-2">
+                          <div className="flex flex-wrap gap-2 py-3 ">
                             <FloatingLabel controlId="floatingSem1" label="Sem 1">
                               <Form.Control
                                 type="number"
@@ -551,7 +551,7 @@ function UserDetails() {
                               />
                             </FloatingLabel>
                           </div>
-                          <div className=" py-3 flex flex-wrap gap-2">
+                          <div className="flex flex-wrap gap-2 py-3 ">
                             <FloatingLabel controlId="floatingSem5" label="Sem 5">
                               <Form.Control
                                 type="number"
@@ -602,10 +602,10 @@ function UserDetails() {
                     </div>
 
                     {/* past qualification  */}
-                    <div className="backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6 my-8">
+                    <div className="p-6 my-8 border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400">
                       <span className='text-2xl md:text-4xl'>Past Qualification</span>
                       <div className="grid grid-cols-1 md:grid-cols-3">
-                        <div className="px-2 py-3 flex flex-col gap-2">
+                        <div className="flex flex-col gap-2 px-2 py-3">
                           <FloatingLabel controlId="floatingSelectSSC" label="SSC Board Name">
                             <Form.Select
                               aria-label="Floating label select SSCBoard"
@@ -689,7 +689,7 @@ function UserDetails() {
                           </FloatingLabel>
                         </div>
 
-                        <div className="px-2 py-3 flex flex-col gap-2">
+                        <div className="flex flex-col gap-2 px-2 py-3">
                           <FloatingLabel controlId="floatingSelectHSC" label="HSC Board Name">
                             <Form.Select
                               aria-label="Floating label select HSC Board"
@@ -773,7 +773,7 @@ function UserDetails() {
                           </FloatingLabel>
                         </div>
 
-                        <div className="px-2 py-3 flex flex-col gap-2">
+                        <div className="flex flex-col gap-2 px-2 py-3">
                           <FloatingLabel controlId="floatingSelectDiploma" label="Diploma Board Name">
                             <Form.Select
                               aria-label="Floating label select Diploma Board"
@@ -864,7 +864,7 @@ function UserDetails() {
                   )}
 
                 {(completeProfileReq || currentUserData.role === 'superuser') && (
-                  <div className="flex flex-col justify-center items-center gap-2">
+                  <div className="flex flex-col items-center justify-center gap-2">
                     <Button variant="primary" type='submit' size='lg'>Update</Button>
                   </div>
                 )}

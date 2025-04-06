@@ -10,7 +10,7 @@ import ModalBox from '../Modal';
 import { BASE_URL } from '../../config/backend_url';
 
 function PostJob() {
-  document.title = 'CPMS | Post Job';
+  document.title = 'CareerConnect | Post Job';
   const navigate = useNavigate();
 
   const { jobId } = useParams();
@@ -149,14 +149,14 @@ function PostJob() {
 
       {
         loading ? (
-          <div className="flex justify-center h-72 items-center">
-            <i className="fa-solid fa-spinner fa-spin text-3xl" />
+          <div className="flex items-center justify-center h-72">
+            <i className="text-3xl fa-solid fa-spinner fa-spin" />
           </div>
         ) : (
           <>
             <div className="">
               <form onSubmit={handleSubmit}>
-                <div className="my-8 text-base backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6 max-sm:text-sm max-md:p-3">
+                <div className="p-6 my-8 text-base border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400 max-sm:text-sm max-md:p-3">
                   <div className="grid grid-cols-1 gap-2">
                     {/* company details  */}
                     <FloatingLabel controlId="floatingSelectDifficulty" label={
@@ -188,7 +188,7 @@ function PostJob() {
                   </div>
                 </div>
 
-                <div className="my-8 text-base backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6 max-sm:text-sm max-md:p-3">
+                <div className="p-6 my-8 text-base border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400 max-sm:text-sm max-md:p-3">
                   <div className="flex flex-col">
                     {/* job details  */}
                     <div className="grid grid-cols-3 gap-2 max-md:grid-cols-1">
@@ -294,7 +294,7 @@ function PostJob() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-center gap-2">
+                <div className="flex flex-col items-center justify-center gap-2">
                   <Button variant="primary" type='submit' size='lg'>POST</Button>
                 </div>
               </form>

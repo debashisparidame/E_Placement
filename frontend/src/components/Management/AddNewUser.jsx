@@ -8,7 +8,7 @@ import { BASE_URL } from '../../config/backend_url';
 import { useLocation } from 'react-router-dom';
 
 function AddNewUser() {
-  document.title = 'CPMS | Add new user';
+  document.title = 'CareerConnect | Add new user';
 
   const location = useLocation();
   // filter management or tpo or student to add
@@ -181,9 +181,9 @@ function AddNewUser() {
         position="top-center"
       />
 
-      <div className="flex justify-center items-center h-full max-md:h-fit text-base max-sm:text-sm">
-        <div className="my-4 backdrop-blur-md bg-white/30 border border-white/20 rounded-lg p-8 shadow shadow-red-400 w-fit">
-          <Form onSubmit={handleModalSubmit} className='flex flex-col justify-center items-center'>
+      <div className="flex items-center justify-center h-full text-base max-md:h-fit max-sm:text-sm">
+        <div className="p-8 my-4 border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400 w-fit">
+          <Form onSubmit={handleModalSubmit} className='flex flex-col items-center justify-center'>
             <div className="flex flex-col gap-3">
               <div className="grid grid-cols-2 gap-x-3 gap-y-6 max-sm:grid-cols-1 max-sm:gap-x-1 max-sm:gap-y-1">
                 <div className="">
@@ -270,7 +270,7 @@ function AddNewUser() {
                 />
               </div>
             </div>
-            <button type="submit" className="my-1 flex items-center px-3 py-2 bg-blue-500 text-white rounded">
+            <button type="submit" className="flex items-center px-3 py-2 my-1 text-white bg-blue-500 rounded">
               <GrFormAdd className="mr-2 text-3xl max-sm:text-lg max-sm:mr-0.5" />
               Create New
             </button>

@@ -9,7 +9,7 @@ import { BASE_URL } from '../config/backend_url';
 import { useNavigate } from 'react-router-dom';
 
 function SendNotice() {
-  document.title = 'CPMS | Send Notice';
+  document.title = 'CareerConnect | Send Notice';
 
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);  // Loading state for initial fetch
@@ -101,13 +101,13 @@ function SendNotice() {
       />
 
       {loading ? (
-        <div className="flex justify-center h-72 items-center">
-          <i className="fa-solid fa-spinner fa-spin text-3xl" />
+        <div className="flex items-center justify-center h-72">
+          <i className="text-3xl fa-solid fa-spinner fa-spin" />
         </div>
       ) : (
         <>
           <div className="">
-            <div className="my-8 backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-6 max-sm:text-sm max-sm:p-3">
+            <div className="p-6 my-8 border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400 max-sm:text-sm max-sm:p-3">
               <div className="grid grid-cols-2 gap-2">
 
                 {/* Receiver Role (Only for Management Admin) */}
@@ -174,7 +174,7 @@ function SendNotice() {
             </div>
 
             {/* Submit Button */}
-            <div className="flex flex-col justify-center items-center gap-2">
+            <div className="flex flex-col items-center justify-center gap-2">
               <Button
                 variant="primary"
                 size='lg'
@@ -186,7 +186,7 @@ function SendNotice() {
                   e.target.querySelector('i').classList.remove('fa-solid', 'fa-bounce');
                 }}
               >
-                <i className="fa-regular fa-paper-plane mr-2" />
+                <i className="mr-2 fa-regular fa-paper-plane" />
                 Send
               </Button>
             </div>

@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 
 function LandingPage() {
-  document.title = 'CPMS';
+  document.title = 'CareerConnect';
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ function LandingPage() {
       <div className="flex flex-col flex-wrap">
         <LandingNavbar />
         <LandingHeroPage />
-        <LandingAbout />
+        {/* <LandingAbout /> */}
         <LandFooter />
       </div>
 

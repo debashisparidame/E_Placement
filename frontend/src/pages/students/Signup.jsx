@@ -7,7 +7,7 @@ import isAuthenticated from '../../utility/auth.utility';
 import { BASE_URL } from '../../config/backend_url';
 
 function Signup() {
-  document.title = 'CPMS | Student Sign Up';
+  document.title = 'CareerConnect | Student Sign Up';
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -113,21 +113,21 @@ function Signup() {
 
       <div className="flex justify-center items-center py-2 min-h-screen bg-gradient-to-r from-red-400 from-10% via-pink-300 via-40% to-purple-300 to-100% ">
         <form className="form-signin flex justify-center items-center flex-col gap-3 backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400 p-8 w-1/3 max-lg:w-2/3 max-md:w-3/4 max-[400px]:w-4/5" onSubmit={handleSubmit}>
-          <div className='flex justify-center items-center flex-col'>
-            <img className="mb-4 rounded-xl shadow w-30 h-28 lg:w-40 lg:h-40" src={`${Logo}`} alt="Logo Image" />
-            <h1 className="h3 mb-3 font-weight-normal">Sign Up as a Student</h1>
+          <div className='flex flex-col items-center justify-center'>
+            <img className="mb-4 rounded-xl w-30 h-28 lg:w-30 lg:h-40" src={`${Logo}`} alt="Logo Image" />
+            <h1 className="mb-3 h3 font-weight-normal">Sign Up as a Student</h1>
           </div>
           <div className="w-full">
             <label htmlFor="inputName" className="sr-only">Name</label>
-            <input type="text" id="inputName" className="form-control ml-1" placeholder="Name" autoFocus="" fdprocessedid="gwlj3s" autoComplete='Name' name='first_name' value={first_name} onChange={handleChange} />
-            <div className="text-red-500 ml-2">
+            <input type="text" id="inputName" className="ml-1 form-control" placeholder="Name" autoFocus="" fdprocessedid="gwlj3s" autoComplete='Name' name='first_name' value={first_name} onChange={handleChange} />
+            <div className="ml-2 text-red-500">
               <span>{error?.first_name}</span>
             </div>
           </div>
           <div className="w-full">
             <label htmlFor="inputEmail" className="sr-only">Email Address</label>
-            <input type="email" id="inputEmail" className="form-control ml-1" placeholder="Email Address" autoFocus="" fdprocessedid="gwlj3s" autoComplete='email' name='email' value={email} onChange={handleChange} />
-            <div className="text-red-500 ml-2">
+            <input type="email" id="inputEmail" className="ml-1 form-control" placeholder="Email Address" autoFocus="" fdprocessedid="gwlj3s" autoComplete='email' name='email' value={email} onChange={handleChange} />
+            <div className="ml-2 text-red-500">
               <span>{error?.email}</span>
             </div>
           </div>
@@ -136,7 +136,7 @@ function Signup() {
             <input
               type="number"
               id="inputNumber"
-              className="form-control ml-1"
+              className="ml-1 form-control"
               placeholder="Phone Number"
               autoFocus=""
               fdprocessedid="gwlj3s"
@@ -150,23 +150,23 @@ function Signup() {
                 }
               }}
             />
-            <div className="text-red-500 ml-2">
+            <div className="ml-2 text-red-500">
               <span>{error?.number}</span>
             </div>
           </div>
 
           <div className="w-full">
-            <div className="flex justify-center items-center w-full">
+            <div className="flex items-center justify-center w-full">
               <label htmlFor="inputPassword" className="sr-only">Password</label>
               <input type={`${isEyeOpen ? "text" : "password"}`} id="inputPassword" className="form-control" placeholder="Password" fdprocessedid="9sysne" autoComplete='current-password' name='password' value={password} onChange={handleChange} />
               <i className={`${isEyeOpen ? "fa-solid fa-eye" : "fa-regular fa-eye-slash"} -ml-6 cursor-pointer`} onClick={handleEye}></i>
             </div>
-            <div className="text-red-500 ml-2">
+            <div className="ml-2 text-red-500">
               <span>{error?.password}</span>
             </div>
           </div>
 
-          <div className="flex justify-center items-center flex-col">
+          <div className="flex flex-col items-center justify-center">
             <button
               className="btn btn-primary btn-block"
               type="submit"
@@ -175,9 +175,9 @@ function Signup() {
             </button>
           </div>
           <span className='text-center'>Already having account?
-            <span className='text-blue-500 font-bold cursor-pointer px-1' onClick={() => navigate('../student/login')}>Login</span>
+            <span className='px-1 font-bold text-blue-500 cursor-pointer' onClick={() => navigate('../student/login')}>Login</span>
           </span>
-          <p className="text-muted text-center text-gray-400">© College Placement Management System 2024 - 25</p>
+          <p className="text-center text-gray-400 text-muted"><span className="font-semibold text-violet-600">© CareerConnect 2025</span></p>
         </form>
       </div>
     </>

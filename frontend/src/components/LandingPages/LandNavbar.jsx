@@ -8,7 +8,7 @@ function LandingNavbar() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [buttonSize, setButtonSize] = useState('lg');
-  const [logoText, setLogoText] = useState('College Placement Portal');
+  const [logoText, setLogoText] = useState('CareerConnect');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,10 +22,10 @@ function LandingNavbar() {
         setLogoText('CPMS');
       } else if (width <= 768) {
         setButtonSize('md');
-        setLogoText('College Placement Portal');
+        setLogoText('CareerConnect');
       } else {
         setButtonSize('lg');
-        setLogoText('College Placement Portal');
+        setLogoText('CareerConnect');
       }
     };
 
@@ -53,9 +53,9 @@ function LandingNavbar() {
           <img
             src={Logo}
             alt="CPMS Logo"
-            className="w-16 h-16 border border-gray-300 shadow-sm rounded-xl md:w-20 md:h-20"
+            className="w-16 h-16 border-white md:w-12 md:h-17"
           />
-          <h1 className={`text-2xl md:text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-emerald-500 bg-clip-text text-transparent`}>
+          <h1 className={`text-2xl md:text-4xl font-extrabold bg-gradient-to-r from-orange-700 to-orange-700 bg-clip-text text-transparent mt-3`}>
             {logoText}
           </h1>
         </div>
