@@ -6,7 +6,7 @@ const AccordionPlaceholder = () => {
       {/* 4th Year */}
       <Accordion.Item
         eventKey="1"
-        className="backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400"
+        className="border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400"
       >
         <Accordion.Header>Fourth Year</Accordion.Header>
         <Accordion.Body>
@@ -22,21 +22,21 @@ const AccordionPlaceholder = () => {
 
       {/* 3rd Year */}
       <Accordion.Item
-        className="backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400"
+        className="border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400"
       >
         <Accordion.Header>Third Year</Accordion.Header>
       </Accordion.Item>
 
       {/* 2nd Year */}
       <Accordion.Item
-        className="backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400"
+        className="border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400"
       >
         <Accordion.Header>Second Year</Accordion.Header>
       </Accordion.Item>
 
       {/* 1st Year */}
       <Accordion.Item
-        className="backdrop-blur-md bg-white/30 border border-white/20 rounded-lg shadow shadow-red-400"
+        className="border rounded-lg shadow backdrop-blur-md bg-white/30 border-white/20 shadow-red-400"
       >
         <Accordion.Header>First Year</Accordion.Header>
       </Accordion.Item>
